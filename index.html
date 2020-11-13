@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
   <title>Ragbet BOT</title>
-  <link rel="stylesheet" href="css/style.css" media="all">
+  <link rel="stylesheet" href="css/style.css?v=1" media="all">
 </head>
 <body>
   <p id="os"><b>OS:</b> </p>
-  <!-- <p id="language"><b>Language:</b> </p>
+  <p id="language"><b>Language:</b> </p>
   <p id="version"><b>Version:</b> </p>
   <p id="isInClient"><b>isInClient:</b> </p>
   <p id="accessToken"><b>AccessToken:</b> </p>
@@ -34,7 +34,7 @@
   <button onclick="openWindow()">Open Window</button>
   <button id="btnScanCode" onclick="scanCode()">Scan Code</button>
   <button id="btnLogOut" onclick="logOut()">Log Out</button>
-  <button id="btnClose" onclick="closed()">Close</button> -->
+  <button id="btnClose" onclick="closed()">Close</button>
 
   <!-- <script src="js/vconsole.min.js"></script> -->
   <!-- <script>
@@ -83,24 +83,24 @@
 
     function getEnvironment() {
       document.getElementById("os").append(liff.getOS())
-      // document.getElementById("language").append(liff.getLanguage()) 
-      // document.getElementById("version").append(liff.getVersion())
-      // document.getElementById("accessToken").append(liff.getAccessToken())
-      // document.getElementById("isInClient").append(liff.isInClient())
-      // if(liff.isInClient()){
-      //   document.getElementById("btnLogOut").style.display = "none"
-      // }else{
-      //   document.getElementById("btnMsg").style.display = "none"
-      //   document.getElementById("btnScanCode").style.display = "none"
-      //   document.getElementById("btnClose").style.display = "none"
-      // }
+      document.getElementById("language").append(liff.getLanguage()) 
+      document.getElementById("version").append(liff.getVersion())
+      document.getElementById("accessToken").append(liff.getAccessToken())
+      document.getElementById("isInClient").append(liff.isInClient())
+      if(liff.isInClient()){
+        document.getElementById("btnLogOut").style.display = "none"
+      }else{
+        document.getElementById("btnMsg").style.display = "none"
+        document.getElementById("btnScanCode").style.display = "none"
+        document.getElementById("btnClose").style.display = "none"
+      }
     }
 
     async function main() {
       alert("Welcome to Ragbet.net")
       await liff.init({ liffId: "1655239313-2lZx8oOL" })
       getEnvironment()
-      // getUserProfile()
+      getUserProfile()
       // getContext()
       // getFriendship()
       // createUniversalLink()
