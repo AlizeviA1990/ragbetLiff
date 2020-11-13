@@ -42,7 +42,7 @@
     console.log("Hello World!")
   </script> -->
 
-  <!-- <script src="https://static.line-scdn.net/liff/edge/versions/2.5.0/sdk.js"></script> -->
+  <script src="https://static.line-scdn.net/liff/edge/versions/2.5.0/sdk.js"></script>
   <script>
     function createUniversalLink() {
     }
@@ -77,6 +77,8 @@
       document.getElementById("userId").append(profile.userId)
       document.getElementById("statusMessage").append(profile.statusMessage)
       document.getElementById("displayName").append(profile.displayName)
+      // document.getElementById("decodedIDToken").append(liff.getDecodedIDToken().email)
+      document.getElementById("decodedIDToken").style.display = "none"
     }
 
     function getEnvironment() {
@@ -104,7 +106,7 @@
       // createUniversalLink()
     }
 
-    await main()
+    main()
 
   </script>
 </body>
