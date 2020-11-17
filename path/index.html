@@ -20,5 +20,29 @@
     const params = new URLSearchParams(queryString);
     document.getElementById("param").append(params.get("param"));
   </script>
+  <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
+  <script>
+
+    async function getUserProfile(){
+      const profile = await liff.getProfile()
+      document.getElementById("pictureUrl").src = profile.pictureUrl
+      document.getElementById("userId").append(profile.userId)
+      document.getElementById("statusMessage").append(profile.statusMessage)
+      document.getElementById("displayName").append(profile.displayName)
+      document.getElementById("decodedIDToken").append(liff.getDecodedIDToken().email)
+    }
+
+    async function main() {
+      await liff.init({liffId:"1655239313-2lZx8oOL"})
+      if(liff.isLoggedIn()){
+        getUserProfile()
+      } else {
+        liff.login({redirectUri:"https://Alizevia1990.github.io/ragbetLiff/path"})
+      }
+    }
+
+    main()
+
+  </script>
 </body>
 </html>

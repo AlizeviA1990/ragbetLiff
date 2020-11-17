@@ -27,7 +27,7 @@
   <p id="isLoggedIn"><b>isLoggedIn:</b> </p>
   <p id="universalLink1"><b>Universal Link:</b> </p>
   <p id="universalLink2"><b>Universal Link with Query params:</b> </p>
-  <p><a href="liff/path/?param=9">Link to Path</a></p>
+  <p><a href="https://alizevia1990.github.io/ragbetLiff/path/?param=9">Link to Path</a></p>
 
   <button id="btnMsg" onclick="sendMsg()">Send Message</button>
   <button id="btnShare" onclick="shareMsg()">Share Target Picker</button>
@@ -44,13 +44,29 @@
 
   <script src="https://static.line-scdn.net/liff/edge/versions/2.5.0/sdk.js"></script>
   <script>
+
     function createUniversalLink() {
+
+        const link1 = liff.permanentLink.createUrl()
+        document.getElementById("universalLink1").append(link1)
+
+        liff.permanentLink.setExtraQueryParam('param=9')
+        const link2 = liff.permanentLink.createUrl()
+        document.getElementById("universalLink2").append(link2)
     }
 
     async function shareMsg() {
+        await liff.shareTargetPicker([
+            {
+                "type":"text",
+                "text":"This message was sent by ShareTargetPicker"
+            }
+        ])
     }
 
     function logOut() {
+        liff.logOut()
+        window.location.reload()
     }
 
     function closed() {
@@ -134,11 +150,11 @@
         getUserProfile()
         getContext()
         getFriendship()
+        createUniversalLink()
       } else {
           liff.login()
       }
       
-      // createUniversalLink()
     }
 
     main()
@@ -146,3 +162,6 @@
   </script>
 </body>
 </html>
+
+<!-- git commit -m "index 3"
+git push -u origin main -->
