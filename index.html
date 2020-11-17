@@ -54,12 +54,19 @@
     }
 
     function closed() {
+        liff.closeWindow()
     }
 
     async function scanCode() {
+        const result = await liff.scanCode()
+        document.getElementById("scanCode").append(result.value)
     }
 
     function openWindow() {
+        liff.openWindow({
+            url:"https://line.me",
+            external:true // เปิดข้างนอก
+        })
     }
 
     async function getFriendship() {
@@ -121,11 +128,16 @@
     async function main() {
       alert("Welcome to Ragbet.net")
       await liff.init({ liffId: "1655239313-2lZx8oOL" })
-      getEnvironment()
-      getUserProfile()
-      getContext()
-      sendMsg()
-      getFriendship()
+      document.getElementById("isLoggedIn").append(liff.isLoggedIn())
+      if(liff.isLoggedIn()){
+        getEnvironment()
+        getUserProfile()
+        getContext()
+        getFriendship()
+      } else {
+          liff.login()
+      }
+      
       // createUniversalLink()
     }
 
