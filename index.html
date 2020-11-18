@@ -39,6 +39,7 @@
   <button id="btnScanCode" onclick="scanCode()">Scan Code</button>
   <button id="btnLogOut" onclick="logOut()">Log Out</button>
   <button id="btnClose" onclick="closed()">Close</button>
+  <button id="btnRefresh" onclick="refresh()">Refresh</button>
 
   <script src="js/vconsole.min.js"></script>
   <script>
@@ -49,6 +50,13 @@
 
   <script src="https://static.line-scdn.net/liff/edge/versions/2.5.0/sdk.js"></script>
   <script>
+
+    function refresh(){
+      var d = new Date();
+      var n = d.getMinutes();
+      var link = window.location.href+'?v='+n;
+      window.location.replace(link); 
+    }
 
     function createUniversalLink() {
 
