@@ -112,6 +112,20 @@
       }
     }
 
+    async function welcomeMsg() {
+      if(liff.getContext().type !== "none"){
+        await liff.sendMessages([
+          {
+            "type":"flex",
+            "altText":"This is a Flex message",
+            "contents":{
+              
+            }
+          }
+        ])
+      }
+    }
+
     function getContext() {
       document.getElementById("type").append(liff.getContext().type)
       document.getElementById("viewType").append(liff.getContext().viewType)
@@ -155,6 +169,7 @@
           getContext()
           getFriendship()
           createUniversalLink()
+          welcomeMsg()
         } else {
             liff.login()
         }
