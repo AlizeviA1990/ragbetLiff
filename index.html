@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
-  <title>Ragbet BOT 5555</title>
+  <title>Ragbet BOT 6+6</title>
   <!-- <link rel="stylesheet" href="css/style.css?v=7" media="all"> -->
   <script>
     document.write('<link rel="stylesheet" href="css/style.css?cache='+new Date().getTime()+'">')
@@ -62,10 +62,27 @@
 
     async function shareMsg() {
         await liff.shareTargetPicker([
-            {
-                "type":"text",
-                "text":"This message was sent by ShareTargetPicker"
-            }
+          {
+            "type": "bubble",
+            "direction": "ltr",
+            "styles": {
+              "header": {
+                "backgroundColor": "#ffaaaa",
+              },
+              "body": {
+                "backgroundColor": "#aaffaa",
+                "separator": true,
+                "separatorColor": "#efefef"
+              },
+              "footer": {
+                "backgroundColor": "#aaaaff"
+              }
+            },
+            "header": {},
+            "hero": {},
+            "body": {},
+            "footer": {}
+          }
         ])
     }
 
