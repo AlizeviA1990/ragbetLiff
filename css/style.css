@@ -70,7 +70,7 @@ form fieldset {
   width: 300px;
   height: 60px;
   background: white;
-  border-radius: 3px;
+  border-radius: 10px;
   opacity: 0;
   transform: scale(0.2);
   transition: all 0.4s ease-in-out;
@@ -90,7 +90,7 @@ form fieldset p {
 form fieldset input {
   height: 40px;
   margin-top: 8px;
-  border: none;
+  border: 0px;
   outline: none;
 }
 form fieldset .icon {
