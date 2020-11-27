@@ -10,99 +10,123 @@
   </script>
 </head>
 <body>
-  <p id="isInClient"><b>isInClient:</b> </p>
+  <h1>Step by step form</h1>
+  <h2>Just practising Javascript</h2>
+
+  <form>
+    <ul class="items"></ul>
+    <fieldset class="username enable">
+      <div class="icon left"><i class="user"></i></div>
+      <input type="text" name="username" placeholder="Username"/>
+      <div class="icon right button"><i class="arrow"></i></div>
+    </fieldset>
+    <fieldset class="email">
+      <div class="icon left"><i class="letter"></i></div>
+      <input type="mail" name="email" placeholder="Email"/>
+      <div class="icon right button"><i class="arrow"></i></div>
+    </fieldset>
+    <fieldset class="password">
+      <div class="icon left"><i class="lock"></i></div>
+      <input type="password" name="password" placeholder="Password"/>
+      <div class="icon right button"><i class="arrow"></i></div>
+    </fieldset>
+    <fieldset class="thanks">
+      <div class="icon left"><i class="heart"></i></div>
+      <p>Thanks for your time</p>
+      <div class="icon right"><i class="heart"></i></div>
+    </fieldset>
+  </form>
+
+  <p id="isLoggedIn"><b>isLoggedIn:</b> </p>
+  
+  <!-- <p id="isInClient"><b>isInClient:</b> </p>
   <p id="accessToken"><b>AccessToken:</b> </p>
   <img id="pictureUrl">
   <p id="userId"><b>userId:</b> </p>
   <p id="displayName"><b>displayName:</b> </p>
   <p id="utouId"><b>utouId:</b> </p>
   <p id="roomId"><b>roomId:</b> </p>
-  <p id="isLoggedIn"><b>isLoggedIn:</b> </p>
+  
   <p id="universalLink1"><b>Universal Link:</b> </p>
   <p id="universalLink2"><b>Universal Link with Query params:</b> </p>
   <p><a href="https://alizevia1990.github.io/ragbetLiff/path/?param=9">Link to Path</a></p>
 
   <button id="btnMsg" onclick="sendMsg()">Send Message</button>
-  <button id="btnCancel" onclick="cancel()">Cancel</button>
+  <button id="btnCancel" onclick="cancel()">Cancel</button> -->
 
-  <script src="js/vconsole.min.js"></script>
-  <script>
-    var vConsole = new VConsole()
-    console.log("Hello World!")
-    //errorPlease()
-  </script>
+  <script src="javascriptStyle.js"></script>
 
   <script src="https://static.line-scdn.net/liff/edge/versions/2.5.0/sdk.js"></script>
   <script>
 
-    function createUniversalLink() {
+    // function createUniversalLink() {
 
-        const link1 = liff.permanentLink.createUrl()
-        document.getElementById("universalLink1").append(link1)
+    //     const link1 = liff.permanentLink.createUrl()
+    //     document.getElementById("universalLink1").append(link1)
 
-        liff.permanentLink.setExtraQueryParam('param=9')
-        const link2 = liff.permanentLink.createUrl()
-        document.getElementById("universalLink2").append(link2)
-    }
+    //     liff.permanentLink.setExtraQueryParam('param=9')
+    //     const link2 = liff.permanentLink.createUrl()
+    //     document.getElementById("universalLink2").append(link2)
+    // }
 
-    async function shareMsg() {
-        await liff.shareTargetPicker([
-          {
-            "type":"text",
-            "text":"This message was sent by ShareTargetPicker"
-          }
-        ])
-    }
+    // async function shareMsg() {
+    //     await liff.shareTargetPicker([
+    //       {
+    //         "type":"text",
+    //         "text":"This message was sent by ShareTargetPicker"
+    //       }
+    //     ])
+    // }
 
-    function cancel() {
-        liff.closeWindow()
-    }
+    // function cancel() {
+    //     liff.closeWindow()
+    // }
 
 
-    async function sendMsg() {
-      if(liff.getContext().type !== "none"){
-        await liff.sendMessages([
-          {
-            "type":"sticker",
-            "stickerId":100,
-            "packageId":1
-          }
-        ])
-        alert("Message sent")
-      }
-    }
+    // async function sendMsg() {
+    //   if(liff.getContext().type !== "none"){
+    //     await liff.sendMessages([
+    //       {
+    //         "type":"sticker",
+    //         "stickerId":100,
+    //         "packageId":1
+    //       }
+    //     ])
+    //     alert("Message sent")
+    //   }
+    // }
 
-    function getContext() {
-      document.getElementById("utouId").append(liff.getContext().utouId)
-      document.getElementById("roomId").append(liff.getContext().roomId)
-    }
+    // function getContext() {
+    //   document.getElementById("utouId").append(liff.getContext().utouId)
+    //   document.getElementById("roomId").append(liff.getContext().roomId)
+    // }
 
-    async function getUserProfile() {
-      const profile = await liff.getProfile()
-      document.getElementById("pictureUrl").src = profile.pictureUrl
-      document.getElementById("userId").append(profile.userId)
-      document.getElementById("displayName").append(profile.displayName)
-    }
+    // async function getUserProfile() {
+    //   const profile = await liff.getProfile()
+    //   document.getElementById("pictureUrl").src = profile.pictureUrl
+    //   document.getElementById("userId").append(profile.userId)
+    //   document.getElementById("displayName").append(profile.displayName)
+    // }
 
-    function getEnvironment() {
-      document.getElementById("accessToken").append(liff.getAccessToken())
-      document.getElementById("isInClient").append(liff.isInClient())
-      if(liff.isInClient()){
-      }else{
-        document.getElementById("btnMsg").style.display = "none"
-        document.getElementById("btnCancel").style.display = "none"
-      }
-    }
+    // function getEnvironment() {
+    //   document.getElementById("accessToken").append(liff.getAccessToken())
+    //   document.getElementById("isInClient").append(liff.isInClient())
+    //   if(liff.isInClient()){
+    //   }else{
+    //     document.getElementById("btnMsg").style.display = "none"
+    //     document.getElementById("btnCancel").style.display = "none"
+    //   }
+    // }
 
     async function main() {
 
       liff.ready.then(()=>{
         document.getElementById("isLoggedIn").append(liff.isLoggedIn())
         if(liff.isLoggedIn()){
-          getEnvironment()
-          getUserProfile()
-          getContext()
-          createUniversalLink()
+          // getEnvironment()
+          // getUserProfile()
+          // getContext()
+          // createUniversalLink()
         } else {
             liff.login()
         }
