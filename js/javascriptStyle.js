@@ -4,12 +4,12 @@
 
 function init() {
     // Generate li foreach fieldset
-    for (var i = 0; i < count; i++) {
-      var ul = document.querySelector("ul.items"),
-        li = document.createElement("li");
-  
-      ul.appendChild(li);
-    }
+                                                                                                            // for (var i = 0; i < count; i++) {
+                                                                                                            //   var ul = document.querySelector("ul.items"),
+                                                                                                            //     li = document.createElement("li");
+                                                                                                        
+                                                                                                            //   ul.appendChild(li);
+                                                                                                            // }
     // Add class active on first li
     ul.firstChild.classList.add("active");
   }
@@ -30,10 +30,10 @@ function init() {
       nextEnable.classList.add("enable");
   
       // Switch active class on left list
-      var active = document.querySelector("ul.items li.active"),
-        nextActive = active.nextElementSibling;
-      active.classList.remove("active");
-      nextActive.classList.add("active");
+                                                                                                            //   var active = document.querySelector("ul.items li.active"),
+                                                                                                            //     nextActive = active.nextElementSibling;
+                                                                                                            //   active.classList.remove("active");
+                                                                                                            //   nextActive.classList.add("active");
     }
   }
   

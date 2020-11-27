@@ -36,26 +36,7 @@ h2 {
   opacity: 0.7;
 }
 
-ul.items {
-  position: absolute;
-  width: 30px;
-  height: auto;
-  top: 50%;
-  left: -60px;
-  transform: translateY(-50%);
-}
-ul.items li {
-  width: 8px;
-  height: 8px;
-  margin: 10px 0;
-  background: white;
-  border-radius: 50%;
-  opacity: 0.4;
-  cursor: pointer;
-}
-ul.items li.active {
-  opacity: 1;
-}
+
 
 form {
   position: absolute;
